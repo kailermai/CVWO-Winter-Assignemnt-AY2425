@@ -3,8 +3,7 @@ import { SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function Login(props: {setName: (name: string) => void}) {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
     const navigate = useNavigate(); // React Router's navigate hook
 
     const submit = async (e: SyntheticEvent) => {
@@ -15,8 +14,7 @@ export function Login(props: {setName: (name: string) => void}) {
             headers: {'Content-type': 'application/json'},
             credentials: 'include', // to get cookies
             body: JSON.stringify({
-                email,
-                password
+                name,
             })
         });
 
@@ -34,11 +32,8 @@ export function Login(props: {setName: (name: string) => void}) {
             <Col xs={6}>
                 <form onSubmit={submit}>
                     <h1 className="h3 mb-3 fw-normal">Sign in</h1>
-                    <input type="email" className="form-control mb-3" placeholder="Email address" required  
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                    <input type="password" className="form-control mb-3" placeholder="Password" required 
-                        onChange={e => setPassword(e.target.value)}
+                    <input type="text" className="form-control mb-3" placeholder="Name" required 
+                            onChange={e => setName(e.target.value)}
                     />
                     <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
                 </form>
