@@ -1,9 +1,10 @@
-import { Button, Container, Nav, Navbar as NavbarBS } from "react-bootstrap"
+import { Button, Container, Image, Nav, Navbar as NavbarBS } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 
 export function Navbar() {
     return <NavbarBS sticky="top" className="bg-white shadow-sm mb-3">
         <Container>
+            <Image src="public/Threadly-.png" roundedCircle style={{width: "3rem", height: "3rem", marginRight:"1rem"}} />
             <Nav className="me-auto">
                 <Nav.Link to="/" as={NavLink}>
                     Home
