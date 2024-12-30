@@ -14,7 +14,8 @@ export function Register() {
         await fetch('http://localhost:8000/api/register', {
             method: 'POST',
             headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({name,
+            body: JSON.stringify({
+                name,
                 email,
                 password
             })

@@ -6,6 +6,7 @@ import { Navbar } from "./components/Navbar"
 import { Login } from "./pages/Login"
 import { Register } from "./pages/Register"
 import { useEffect, useState } from "react"
+import { ProtectedRoutes } from "./utils/ProtectedRoutes"
 
 
 function App() {
@@ -31,7 +32,9 @@ function App() {
       <Container className="mb-4">
         <Routes>
           <Route path="/" element={<Home name={name} />}/>
-          <Route path="/threads" element={<Threads />} />
+          <Route element={<ProtectedRoutes name={name}/>}>
+            <Route path="/threads" element={<Threads />} />
+          </Route>
           <Route path="/login" element={<Login setName={setName} />}/>
           <Route path="/register" element={<Register />} />
         </Routes>
