@@ -1,11 +1,16 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { SyntheticEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export function Login(props: {setName: (name: string) => void}) {
     const [name, setName] = useState('');
+    const location = useLocation();
+    var [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate(); // React Router's navigate hook
-
+    if (location.state) {
+        errorMessage = location.state?.errorMessage;
+    }
+    
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
@@ -19,10 +24,13 @@ export function Login(props: {setName: (name: string) => void}) {
         });
 
         const content = await response.json();
-        
 
-        navigate('/', {replace: true});
-        props.setName(content.name);
+        if (response.ok) {
+            navigate('/', {replace: true});
+            props.setName(content.name);
+        } else {
+            setErrorMessage(content.message || "An error has occurred, please try again")
+        }
     }
 
     return  (
@@ -32,9 +40,14 @@ export function Login(props: {setName: (name: string) => void}) {
             <Col xs={6}>
                 <form onSubmit={submit}>
                     <h1 className="h3 mb-3 fw-normal">Sign in</h1>
-                    <input type="text" className="form-control mb-3" placeholder="Name" required 
+                    <input type="text" className="form-control mb-3" placeholder="Username" required 
                             onChange={e => setName(e.target.value)}
                     />
+                    {errorMessage && (
+                        <div className="alert alert-danger mt-3" role="alert">
+                            {errorMessage}
+                        </div>
+                    )}
                     <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
                 </form>
             </Col>

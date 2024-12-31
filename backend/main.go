@@ -17,6 +17,7 @@ func main() {
 	app.Use((cors.New(cors.Config{
 		AllowCredentials: true, // allows authetication of cookies
 		AllowOrigins:     "http://localhost:5173",
+		AllowMethods:     "GET, POST, PUT, DELETE",
 	})))
 
 	routes.Setup(app)

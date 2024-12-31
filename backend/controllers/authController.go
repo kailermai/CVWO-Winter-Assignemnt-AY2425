@@ -22,6 +22,16 @@ func Register(c *fiber.Ctx) error {
 		return err
 	}
 
+	// To check if there is an existing user
+	var existingUser models.User
+	result := database.DB.Where("name = ?", data["name"]).First(&existingUser)
+
+	if result.Error == nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"message": "User already exist, please log in.",
+		})
+	}
+
 	user := models.User{
 		Name: data["name"],
 	}
@@ -47,7 +57,7 @@ func Login(c *fiber.Ctx) error {
 	if user.Id == 0 {
 		c.Status(fiber.StatusNotFound)
 		return c.JSON(fiber.Map{
-			"message": "user not found",
+			"message": "User not found, please register first.",
 		})
 	}
 
@@ -61,7 +71,7 @@ func Login(c *fiber.Ctx) error {
 	if err != nil {
 		c.Status(fiber.StatusInternalServerError)
 		return c.JSON(fiber.Map{
-			"message": "could not login",
+			"message": "Could not login",
 		})
 	}
 
@@ -75,7 +85,7 @@ func Login(c *fiber.Ctx) error {
 	c.Cookie((&cookie))
 
 	return c.JSON(fiber.Map{
-		"message": "success",
+		"message": "Success",
 		"name":    user.Name,
 	})
 }
@@ -90,7 +100,7 @@ func User(c *fiber.Ctx) error {
 	if err != nil {
 		c.Status(fiber.StatusUnauthorized)
 		return c.JSON(fiber.Map{
-			"message": "unauthenticated",
+			"message": "Unauthenticated",
 		})
 	}
 
@@ -114,6 +124,6 @@ func Logout(c *fiber.Ctx) error {
 	c.Cookie(&cookie)
 
 	return c.JSON(fiber.Map{
-		"message": "success",
+		"message": "Success!",
 	})
 }
