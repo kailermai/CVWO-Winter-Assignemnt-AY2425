@@ -14,7 +14,11 @@ func Setup(app *fiber.App) {
 	app.Post("/api/logout", controllers.Logout)
 
 	// postController.go
-	app.Post("/api/createpost", controllers.CreatePost)
-	app.Get("/api/findposts", controllers.FindPosts)
-	app.Get("/api/findposts/:id", controllers.FindSinglePost)
+	app.Post("/api/posts", controllers.CreatePost)
+	app.Get("/api/posts", controllers.FindPosts)
+	app.Get("/api/posts/:id", controllers.FindSinglePost)
+	app.Get("/api/posts/:id", controllers.FindSinglePost)
+	app.Put("/api/posts/:id", controllers.UpdatePost)
+	app.Delete("/api/posts/:id", controllers.DeletePost)
+
 }

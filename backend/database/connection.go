@@ -10,7 +10,8 @@ import (
 var DB *gorm.DB
 
 func Connect() {
-	connection, err := gorm.Open(mysql.Open("root:rootroot@/cvwo"), &gorm.Config{})
+	// Important to parseTime=true else will have error accessing posts
+	connection, err := gorm.Open(mysql.Open("root:rootroot@/cvwo?parseTime=true"), &gorm.Config{})
 
 	if err != nil {
 		panic("could not connect to the db")

@@ -58,3 +58,46 @@ func FindSinglePost(c *fiber.Ctx) error {
 	// Respond with it
 	return c.JSON(post)
 }
+
+func UpdatePost(c *fiber.Ctx) error {
+	// Get id of url
+	id := c.Params("id")
+
+	// Get data from request body
+	var body map[string]string
+
+	err := c.BodyParser(&body)
+
+	if err != nil {
+		return err
+	}
+
+	// Find post we want to update
+	var post models.Post
+
+	database.DB.First(&post, id)
+
+	// Update
+	database.DB.Model(&post).Updates(models.Post{
+		Title: body["title"],
+		Body:  body["body"],
+		User:  body["user"],
+	})
+
+	// Respond with it
+	return c.JSON(post)
+}
+
+func DeletePost(c *fiber.Ctx) error {
+	// Get id of url
+	id := c.Params("id")
+
+	// Delete post
+	database.DB.Delete(&models.Post{}, id)
+
+	// Respond
+	c.Status(200)
+	return c.JSON(fiber.Map{
+		"message": "success",
+	})
+}
