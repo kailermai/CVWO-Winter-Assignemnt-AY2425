@@ -18,5 +18,9 @@ func Connect() {
 
 	DB = connection
 
+	// user
 	connection.AutoMigrate(&models.User{})
+
+	// threads
+	connection.AutoMigrate(&models.Post{})
 }
