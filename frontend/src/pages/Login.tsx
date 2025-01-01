@@ -26,8 +26,9 @@ export function Login(props: {setName: (name: string) => void}) {
         const content = await response.json();
 
         if (response.ok) {
-            navigate('/', {replace: true});
             props.setName(content.name);
+            localStorage.setItem("name", content.name);
+            navigate('/', {replace: true});
         } else {
             setErrorMessage(content.message || "An error has occurred, please try again")
         }

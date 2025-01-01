@@ -9,4 +9,5 @@ type Post struct {
 	Title string
 	Body  string
 	User  string
+	Tag   string
 }

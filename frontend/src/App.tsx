@@ -7,10 +7,12 @@ import { Login } from "./pages/Login"
 import { Register } from "./pages/Register"
 import { useEffect, useState } from "react"
 import { ProtectedRoutes } from "./utils/ProtectedRoutes"
+import { Create } from "./pages/Create"
+import { View } from "./pages/View"
 
 
 function App() {
-  const [name, setName] = useState('');
+  const [name, setName] = useState<string>(() => localStorage.getItem("name") || "");
 
   useEffect(() => {
     (
@@ -34,6 +36,8 @@ function App() {
           <Route path="/" element={<Home name={name} />}/>
           <Route element={<ProtectedRoutes name={name}/>}>
             <Route path="/threads" element={<Threads />} />
+            <Route path="/create" element={<Create name={name}/>} />
+            <Route path="/view" element={<View />} />
           </Route>
           <Route path="/login" element={<Login setName={setName} />}/>
           <Route path="/register" element={<Register />} />

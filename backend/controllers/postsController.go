@@ -22,6 +22,7 @@ func CreatePost(c *fiber.Ctx) error {
 		Title: body["title"],
 		Body:  body["body"],
 		User:  body["user"],
+		Tag:   body["tag"],
 	}
 
 	result := database.DB.Create(&post)
