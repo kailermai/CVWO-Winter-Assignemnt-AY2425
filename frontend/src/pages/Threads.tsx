@@ -1,11 +1,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export function Threads() {
+export function Threads(props: {name: string}) {
+    const navigate = useNavigate();
     const [posts, setPosts] = useState<any[]>([]);
     var [errorMessage, setErrorMessage] = useState("");
+
+    // View post function
+    const viewPost = (postID: string) => {
+        // Store the postID in localStorage
+        localStorage.setItem("postID", postID);
+
+        // Navigate to the view post page
+        navigate('/view', {replace: true});
+    };
 
     // Fetch posts from the API
     useEffect(() => {
@@ -52,7 +62,7 @@ export function Threads() {
             )}
             <Row xs={1} md={2} lg={3} className="g-4">
                 {posts.map(post => (
-                    <Col key={post.id}>
+                    <Col key={post.ID}>
                         <Card>
                             <Card.Body>
                                 <Card.Title>{post.Title}</Card.Title>
@@ -65,7 +75,8 @@ export function Threads() {
                                 <Button 
                                     variant="primary" 
                                     className="mt-3"
-                                    onClick={() => console.log(`Viewing post ${post.id}`)}
+                                    onClick={() => viewPost(post.ID)}
+                                    
                                 >
                                     View Post
                                 </Button>

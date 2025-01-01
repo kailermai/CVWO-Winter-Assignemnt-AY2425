@@ -35,7 +35,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home name={name} />}/>
           <Route element={<ProtectedRoutes name={name}/>}>
-            <Route path="/threads" element={<Threads />} />
+            <Route path="/threads" element={<Threads name={name}/>} />
             <Route path="/create" element={<Create name={name}/>} />
             <Route path="/view" element={<View />} />
           </Route>
