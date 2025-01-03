@@ -9,6 +9,7 @@ import { useEffect, useState } from "react"
 import { ProtectedRoutes } from "./utils/ProtectedRoutes"
 import { Create } from "./pages/Create"
 import { View } from "./pages/View"
+import { Update } from "./pages/Update"
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Route path="/threads" element={<Threads name={name}/>} />
             <Route path="/create" element={<Create name={name}/>} />
             <Route path="/view" element={<View />} />
+            <Route path="/update" element={<Update name={name} />} />
           </Route>
           <Route path="/login" element={<Login setName={setName} />}/>
           <Route path="/register" element={<Register />} />

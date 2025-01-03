@@ -11,6 +11,8 @@ export function Navbar(props: {name: string, setName: (name: string) => void}) {
         
         props.setName('');
         localStorage.removeItem("name");
+        localStorage.removeItem("postID");
+
     }
 
     let menu;

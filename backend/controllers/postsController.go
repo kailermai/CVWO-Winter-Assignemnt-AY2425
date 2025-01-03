@@ -83,6 +83,7 @@ func UpdatePost(c *fiber.Ctx) error {
 		Title: body["title"],
 		Body:  body["body"],
 		User:  body["user"],
+		Tag:   body["tag"],
 	})
 
 	// Respond with it
