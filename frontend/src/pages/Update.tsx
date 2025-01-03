@@ -19,6 +19,7 @@ export function Update(props: {name: string}) {
             // Fetch the post by ID
             axios.get(`http://localhost:8000/api/posts/${postID}`)
                 .then(res => {
+                    // to set current post details
                     setPost(res.data);
                     setTitle(res.data.Title);
                     setTag(res.data.Tag);
@@ -37,7 +38,7 @@ export function Update(props: {name: string}) {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
         
-        const response = await fetch('http://localhost:8000/api/posts/' + post.ID, {
+        const response = await fetch(`http://localhost:8000/api/posts/${post.ID}`, {
             method: 'PUT',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
