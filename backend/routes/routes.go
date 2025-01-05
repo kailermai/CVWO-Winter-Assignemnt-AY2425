@@ -21,4 +21,9 @@ func Setup(app *fiber.App) {
 	app.Put("/api/posts/:id", controllers.UpdatePost)
 	app.Delete("/api/posts/:id", controllers.DeletePost)
 
+	// commentsController.go
+	app.Post("/api/comments", controllers.CreateComment)
+	app.Get("/api/comments/:id", controllers.FindComments)
+	app.Put("/api/comments/:id", controllers.UpdateComment)
+	app.Delete("/api/comments/:id", controllers.DeleteComment)
 }

@@ -24,4 +24,7 @@ func Connect() {
 
 	// threads
 	connection.AutoMigrate(&models.Post{})
+
+	// comments
+	connection.AutoMigrate(&models.Comment{})
 }

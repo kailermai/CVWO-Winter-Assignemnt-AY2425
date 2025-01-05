@@ -46,7 +46,7 @@ export function Create(props: {name: string}) {
             <Form onSubmit={submit}>
                 <Form.Group className="mb-3" controlId="formBasicTitle">
                     <Form.Label>Title</Form.Label>
-                    <Form.Control type="text" autoComplete="off" placeholder="Enter title" onChange={e => setTitle(e.target.value)}/>
+                    <Form.Control type="text" required autoComplete="off" placeholder="Enter title" onChange={e => setTitle(e.target.value)}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicTag">
                     <Form.Label>Tag</Form.Label>
@@ -58,7 +58,7 @@ export function Create(props: {name: string}) {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicBody">
                     <Form.Label>Content</Form.Label>
-                    <Form.Control as="textarea" autoComplete="off" rows={5} onChange={e => setBody(e.target.value)}/>
+                    <Form.Control as="textarea" required autoComplete="off" rows={5} onChange={e => setBody(e.target.value)}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicUser">
                     <Form.Label>Username</Form.Label>

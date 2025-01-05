@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Card, CardBody, CardHeader, CardText, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 export function View() {
@@ -31,11 +31,20 @@ export function View() {
         <Container>
             {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
             {post && (
-                <div>
-                    <h1>{post.Title}</h1>
-                    <p>{post.Body}</p>
-                    <footer>Posted by {post.User || "Anonymous"}</footer>
-                </div>
+                <>
+                    <Card className="mb-3">
+                        <CardHeader>{post.Title}</CardHeader>
+                        <CardBody>
+                            <CardText>Posted on 29 Dec by {post.User || "Anonymous"}</CardText>
+                            <blockquote className="blockquote mb-0">
+                                <p>{post.Body}</p>
+                            </blockquote>
+                        </CardBody>
+                    </Card>
+                    <Card>
+                        <CardHeader>Comments</CardHeader>
+                    </Card>
+                </>
             )}
         </Container>
     );
