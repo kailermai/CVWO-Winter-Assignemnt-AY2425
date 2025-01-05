@@ -5,6 +5,7 @@ go 1.23.4
 require (
 	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/golang-jwt/jwt/v4 v4.5.1
+	golang.org/x/crypto v0.31.0
 	gorm.io/driver/mysql v1.5.7
 	gorm.io/gorm v1.25.12
 )

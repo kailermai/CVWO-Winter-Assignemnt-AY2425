@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 export function Login(props: {setName: (name: string) => void}) {
     const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
     const location = useLocation();
     var [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate(); // React Router's navigate hook
@@ -20,6 +21,7 @@ export function Login(props: {setName: (name: string) => void}) {
             credentials: 'include', // to get cookies
             body: JSON.stringify({
                 name,
+                password,
             })
         });
 
@@ -43,6 +45,9 @@ export function Login(props: {setName: (name: string) => void}) {
                     <h1 className="h3 mb-3 fw-normal">Sign in</h1>
                     <input type="text" className="form-control mb-3" placeholder="Username" required 
                             onChange={e => setName(e.target.value)}
+                    />
+                    <input type="password" className="form-control mb-3" placeholder="Password" required 
+                            onChange={e => setPassword(e.target.value)}
                     />
                     {errorMessage && (
                         <div className="alert alert-danger mt-3" role="alert">

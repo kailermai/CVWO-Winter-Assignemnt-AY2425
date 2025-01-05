@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export function Register() {
     const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -15,6 +16,7 @@ export function Register() {
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
                 name,
+                password,
             })
         });
 
@@ -40,6 +42,9 @@ export function Register() {
                         <input type="text" className="form-control mb-3" placeholder="Username" required 
                             onChange={e => setName(e.target.value)}
                         />
+                        <input type="password" className="form-control mb-3" placeholder="Password" required 
+                            onChange={e => setPassword(e.target.value)}
+                        />                       
                         {errorMessage && (
                             <div className="alert alert-danger mt-3" role="alert">
                                 {errorMessage}
