@@ -38,7 +38,7 @@ function App() {
           <Route element={<ProtectedRoutes name={name}/>}>
             <Route path="/threads" element={<Threads name={name}/>} />
             <Route path="/create" element={<Create name={name}/>} />
-            <Route path="/view" element={<View />} />
+            <Route path="/view" element={<View/>} />
             <Route path="/update" element={<Update name={name} />} />
           </Route>
           <Route path="/login" element={<Login setName={setName} />}/>
