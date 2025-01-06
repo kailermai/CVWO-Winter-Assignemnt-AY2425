@@ -35,6 +35,7 @@ export function Create(props: {name: string}) {
 
         
     }
+    
     return (
         <Container className="mt-4">
             <h1 className="mb-4">Create Post</h1>

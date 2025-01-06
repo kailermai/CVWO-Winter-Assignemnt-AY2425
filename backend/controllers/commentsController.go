@@ -69,7 +69,7 @@ func UpdateComment(c *fiber.Ctx) error {
 
 	// Update
 	database.DB.Model(&comments).Updates(models.Comment{
-		Body:   body["body"],
+		Body:   body["commentBody"],
 		User:   body["user"],
 		PostID: body["postid"],
 	})
