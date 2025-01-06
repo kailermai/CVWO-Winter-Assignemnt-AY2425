@@ -6,7 +6,7 @@ export function Create(props: {name: string}) {
     const [title, setTitle] = useState('');
     const [tag, setTag] = useState('General');
     const [body, setBody] = useState('');
-    const [user, setUser] = useState(props.name);
+    const [user] = useState(props.name);
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -35,7 +35,7 @@ export function Create(props: {name: string}) {
 
         
     }
-    
+
     return (
         <Container className="mt-4">
             <h1 className="mb-4">Create Post</h1>
@@ -59,11 +59,16 @@ export function Create(props: {name: string}) {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicBody">
                     <Form.Label>Content</Form.Label>
-                    <Form.Control as="textarea" required autoComplete="off" rows={5} onChange={e => setBody(e.target.value)}/>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicUser">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control disabled readOnly type="text" value={props.name} onChange={e => setUser(e.target.value)}/>
+                    <Form.Control 
+                        as="textarea" 
+                        required 
+                        autoComplete="off" 
+                        rows={5} 
+                        maxLength={1000}
+                        onChange={e => setBody(e.target.value)}/>
+                    <Form.Text className="text-muted">
+                        {1000 - (body.length || 0)} characters remaining.
+                    </Form.Text>
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Submit

@@ -7,7 +7,7 @@ export function Update(props: {name: string}) {
     const [title, setTitle] = useState('');
     const [tag, setTag] = useState('General');
     const [body, setBody] = useState('');
-    const [user, setUser] = useState(props.name);   
+    const [user] = useState(props.name);   
     const [post, setPost] = useState<any>(null);
     const [errorMessage, setErrorMessage] = useState<string>("");
     const navigate = useNavigate();
@@ -53,7 +53,7 @@ export function Update(props: {name: string}) {
 
         if (response.ok) {
             // means that there is no existing user
-            navigate('/view', {replace: true});
+            navigate('/threads/view', {replace: true});
         } else {
             setErrorMessage(content.message || "An error has occurred, please try again");
         }
@@ -83,11 +83,16 @@ export function Update(props: {name: string}) {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicBody">
                     <Form.Label>Content</Form.Label>
-                    <Form.Control as="textarea" autoComplete="off" rows={5} value={body} onChange={e => setBody(e.target.value)}/>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicUser">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control disabled readOnly type="text" value={props.name} onChange={e => setUser(e.target.value)}/>
+                    <Form.Control 
+                        as="textarea" 
+                        autoComplete="off" 
+                        rows={5} 
+                        value={body} 
+                        maxLength={1000}
+                        onChange={e => setBody(e.target.value)}/>
+                    <Form.Text className="text-muted">
+                        {1000 - (body.length || 0)} characters remaining.
+                    </Form.Text>
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Submit

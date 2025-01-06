@@ -1,8 +1,10 @@
-export function Home(props: {name: string}) {
+import { Container } from "react-bootstrap";
+
+export function Home(props: { name: string }) {
 
     return (
-        <div>
-            {props.name ? 'Hi ' + props.name : 'You are not logged in'}
-        </div>
+        <Container className="mt-4">
+            <h1 className="mb-4">Home</h1>
+        </Container>
     );
 };

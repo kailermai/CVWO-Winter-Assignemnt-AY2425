@@ -31,6 +31,12 @@ export function Navbar(props: {name: string, setName: (name: string) => void}) {
     } else {
         menu = (
             <Nav className="me-2">
+                <div className="me-2" style={{
+                    display: "flex",
+                    alignItems:"center",
+                }}>
+                    {props.name}
+                </div>
                 <Nav.Link to="/login" as={NavLink} onClick={logout}>
                     Logout
                 </Nav.Link>

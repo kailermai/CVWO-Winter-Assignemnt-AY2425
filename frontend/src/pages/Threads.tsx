@@ -16,7 +16,7 @@ export function Threads(props: { name: string }) {
         localStorage.setItem("postID", postID);
 
         // Navigate to the view post page
-        navigate('/view', { replace: true });
+        navigate('/threads/view');
     };
 
     // Update post function
@@ -25,7 +25,7 @@ export function Threads(props: { name: string }) {
         localStorage.setItem("postID", postID);
 
         // Navigate to the view post page
-        navigate('/update', { replace: true });
+        navigate('/threads/update');
     };
 
     // Delete post function
@@ -81,7 +81,7 @@ export function Threads(props: { name: string }) {
                     height: '3em',
                 }}>
 
-                    <Link to={"/create"} style={{
+                    <Link to={"/threads/create"} style={{
                         color: 'white',
                         textDecoration: 'none',
                     }}>
@@ -93,7 +93,7 @@ export function Threads(props: { name: string }) {
             </Row>
             <Row>
                 <Form.Group className="mb-3">
-                    <Form.Label>Filter by Tag</Form.Label>
+                    <Form.Label>Filter</Form.Label>
                     <Form.Select value={selectedTag} onChange={e => setSelectedTag(e.target.value)}>
                         <option value="All">All</option>
                         <option value="General">General</option>
