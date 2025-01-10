@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Installation guide
+## Prerequisites
+Install Node.js and npm (for the frontend):
+- Download and install [Node.JS](https://nodejs.org/en). This will also install npm.
+- Verify installation:
+```bash
+node -v
+npm -v
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Install Go (for the backend):
+- Download and install [Go](https://go.dev/) from golang.org.
+- Verify installation:
+```bash
+go version
 ```
+
+--- create env file, cd frontend, npm i, npm run dev. go cd backend, go mod tidy, go run main.go (schema will be created when main.go is ran)
+
+## Install MySQL (for the database):
+- Download and install [MySQL Community Server](https://dev.mysql.com/downloads/) from MySQL's official website.
+Note down the username and password to access the MySQL server when installing
+
+## Install Git (to clone repo):
+- Download and install [Git](https://git-scm.com/downloads).
+
+## Steps to Set Up the Application
+1. Cloning the repository
+```bash
+git clone https://github.com/TOBECHANGED
+```
+2. Change into frontend directory
+```bash
+cd frontend
+```
+3. Install dependencies
+```bash
+npm install
+```
+4. Start the development server
+```bash
+npm run dev
+```
+5. Set Up the Backend
+```bash
+cd ../backend
+go mod tidy
+```
+6. Create a .env file from the template .env.example file.
+```bash
+cp .env.example .env
+```
+7. Edit the .env according to the instructions in the template
+8. Start the backend server
+```bash
+go run main.go
+```
+9. Run the Application
+Open the frontend in your browser (http://localhost:5173)
+Ensure the backend API is accessible (http://localhost:8000)
