@@ -78,6 +78,6 @@ cp .env.example .env
 ```bash
 go run main.go
 ```
-9. Run the Application
-Open the frontend in your browser (http://localhost:5173)
+9. Run the Application <br>
+Open the frontend in your browser (http://localhost:5173) <br>
 Ensure the backend API is accessible (http://localhost:8000)
