@@ -1,4 +1,24 @@
-#Threadly
+# Threadly
+A web forum developed for CVWO Winter Assignment AY2425. Threadly is designed for NUS computing students to foster discussions and exchange ideas on various topics. Users can post, comment, and interact with their peers, whether they are seeking advice or discussing internship opportunities. Designed by Mai Kai Ler.
+
+## Deployment
+The deployed app can be found [__to be added__]().
+
+## Tech Stack
+| Component| Tech |
+| ----------- | ----------- |
+| Frontend| React with Typescript|
+| Backend | Go |
+| Database | MySQL |
+| Deployment | __to be added__ |
+| Misc | Adobe Express (website logo) |
+
+## Features
+- An authentication system where users are authenticated by their user name and password.
+- The ability to perform basic CRUD operations for forum threads and comments. CRUD is an acronym for Create, Read, Update and Delete.
+- A category/tagging system to categorise threads so that they are easier to search for through filtering.
+
+---
 
 # Installation guide
 ## Prerequisites
