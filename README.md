@@ -1,5 +1,7 @@
 # Threadly
-A web forum developed for CVWO Winter Assignment AY2425. Threadly is designed for NUS computing students to foster discussions and exchange ideas on various topics. Users can post, comment, and interact with their peers, whether they are seeking advice or discussing internship opportunities. Designed by Mai Kai Ler.
+A web forum developed for CVWO Winter Assignment AY2425. Threadly is designed for NUS computing students to foster discussions and exchange ideas on various topics. <br>
+Name: Mai Kai Ler <br>
+Data of submission: __to be added__
 
 ## Deployment
 The deployed app can be found [__to be added__]().
@@ -22,7 +24,7 @@ The deployed app can be found [__to be added__]().
 
 # Installation guide
 ## Prerequisites
-Install Node.js and npm (for the frontend):
+### Install Node.js and npm (for the frontend):
 - Download and install [Node.JS](https://nodejs.org/en). This will also install npm.
 - Verify installation:
 ```bash
@@ -30,18 +32,18 @@ node -v
 npm -v
 ```
 
-## Install Go (for the backend):
+### Install Go (for the backend):
 - Download and install [Go](https://go.dev/) from golang.org.
 - Verify installation:
 ```bash
 go version
 ```
 
-## Install MySQL (for the database):
+### Install MySQL (for the database):
 - Download and install [MySQL Community Server](https://dev.mysql.com/downloads/) from MySQL's official website.
 Note down the username and password to access the MySQL server when installing
 
-## Install Git (to clone repo):
+### Install Git (to clone repo):
 - Download and install [Git](https://git-scm.com/downloads).
 
 ## Steps to Set Up the Application
@@ -72,7 +74,7 @@ cp .env.example .env
 ```
 7. Edit the .env according to the instructions in the template
   - Schema will be created according to DB_NAME specified
-9. Start the backend server
+8. Start the backend server
 ```bash
 go run main.go
 ```
