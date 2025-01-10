@@ -15,8 +15,6 @@ npm -v
 go version
 ```
 
---- create env file, cd frontend, npm i, npm run dev. go cd backend, go mod tidy, go run main.go (schema will be created when main.go is ran)
-
 ## Install MySQL (for the database):
 - Download and install [MySQL Community Server](https://dev.mysql.com/downloads/) from MySQL's official website.
 Note down the username and password to access the MySQL server when installing
@@ -51,7 +49,8 @@ go mod tidy
 cp .env.example .env
 ```
 7. Edit the .env according to the instructions in the template
-8. Start the backend server
+  - Schema will be created according to DB_NAME specified
+9. Start the backend server
 ```bash
 go run main.go
 ```
