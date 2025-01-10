@@ -42,7 +42,7 @@ export function Login(props: {setName: (name: string) => void}) {
             <Col></Col>
             <Col xs={6}>
                 <form onSubmit={submit}>
-                    <h1 className="h3 mb-3 fw-normal">Sign in</h1>
+                    <h1 className="h3 mb-3 fw-normal">Login</h1>
                     <input type="text" className="form-control mb-3" placeholder="Username" required 
                             onChange={e => setName(e.target.value)}
                     />

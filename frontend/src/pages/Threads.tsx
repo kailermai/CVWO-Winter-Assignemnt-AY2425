@@ -8,7 +8,7 @@ export function Threads(props: { name: string }) {
     const [posts, setPosts] = useState<any[]>([]);
     const [selectedTag, setSelectedTag] = useState<string>("All");
     const [filteredPosts, setFilteredPosts] = useState<any[]>([]);
-    var [errorMessage, setErrorMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     // View post function
     const viewPost = (postID: string) => {
