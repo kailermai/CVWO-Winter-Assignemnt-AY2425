@@ -1,3 +1,5 @@
+#Threadly
+
 # Installation guide
 ## Prerequisites
 Install Node.js and npm (for the frontend):
