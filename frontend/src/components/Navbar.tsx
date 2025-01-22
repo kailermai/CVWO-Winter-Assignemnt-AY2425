@@ -46,7 +46,7 @@ export function Navbar(props: {name: string, setName: (name: string) => void}) {
 
     return <NavbarBS sticky="top" className="shadow-sm mb-3" style={{backgroundColor: "#f5ebe0"}}>
         <Container>
-            <Image src="public/Threadly-.png" roundedCircle style={{width: "3rem", height: "3rem", marginRight:"1rem"}} />
+            <Image src="Threadly-.png" roundedCircle style={{width: "3rem", height: "3rem", marginRight:"1rem"}} />
             <Nav className="me-auto">
                 <Nav.Link to="/" as={NavLink}>
                     Home
