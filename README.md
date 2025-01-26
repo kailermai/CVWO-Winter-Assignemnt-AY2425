@@ -3,6 +3,9 @@ A web forum developed for CVWO Winter Assignment AY2425. Threadly is designed fo
 Name: Mai Kai Ler <br>
 Data of submission: 26/01/25
 
+## Screenshots
+![Screenshots page link](https://github.com/kailermai/Threadly/blob/main/Gallery.md)
+
 ## Tech Stack
 | Component| Tech |
 | ----------- | ----------- |
