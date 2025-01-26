@@ -4,7 +4,7 @@ Name: Mai Kai Ler <br>
 Data of submission: 26/01/25
 
 ## Screenshots
-![Screenshots page link](https://github.com/kailermai/Threadly/blob/main/Gallery.md)
+[Click to view screenshots of threadly](https://github.com/kailermai/Threadly/blob/main/Gallery.md)
 
 ## Tech Stack
 | Component| Tech |
