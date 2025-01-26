@@ -15,6 +15,9 @@ Threads view when not logged in
 Threads view
 ![Threads](/Images/Threads.png)
 
+## Create Post
+![Create Post](/Images/CreatePost.png)
+
 ## Delete Post
 ![Delete Post](/Images/DeletePost.png)
 
