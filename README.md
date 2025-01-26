@@ -1,10 +1,7 @@
 # Threadly
 A web forum developed for CVWO Winter Assignment AY2425. Threadly is designed for NUS computing students to foster discussions and exchange ideas on various topics. <br>
 Name: Mai Kai Ler <br>
-Data of submission: __to be added__
-
-## Deployment
-The deployed app can be found [__to be added__]().
+Data of submission: 26/01/25
 
 ## Tech Stack
 | Component| Tech |
@@ -12,7 +9,6 @@ The deployed app can be found [__to be added__]().
 | Frontend| React with Typescript|
 | Backend | Go |
 | Database | MySQL |
-| Deployment | __to be added__ |
 | Misc | Adobe Express (website logo) |
 
 ## Features
